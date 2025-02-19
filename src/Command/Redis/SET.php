@@ -30,7 +30,7 @@ class SET extends RedisCommand
     public function setArguments(array $arguments)
     {
         foreach ($arguments as $index => $value) {
-            if ($index < 2) {
+            if (in_array($index, ['value', 'key'], true) || $index < 2) {
                 continue;
             }
 
